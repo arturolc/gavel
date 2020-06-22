@@ -3,4 +3,5 @@ config.yaml
 env/
 .vagrant/
 .gitsecret/keys/random_seed
+.env
 !*.secret
