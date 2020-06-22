@@ -4,4 +4,5 @@ env/
 .vagrant/
 .gitsecret/keys/random_seed
 .env
+pg-data*
 !*.secret
