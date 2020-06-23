@@ -1,8 +1,10 @@
-config.yaml
-*.pyc
-env/
-.vagrant/
 .gitsecret/keys/random_seed
+config.yaml
 .env
-pg-data*
+
+env/
+data/
+
+*.pyc
+.vagrant/
 !*.secret
