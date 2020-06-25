@@ -1,0 +1,21 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - apt update 
+      - apt install docker -y
+      - curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+      - chmod +x /usr/local/bin/docker-compose
+      - docker-compose --version
+  pre_build:
+    commands:
+      - echo DB_PASSWORD=2YsaTLxtzQzorB6rq2Qmpr@3mLsRGN29 >> .env
+      - echo 9928b1870e1c9c3b4205e76a81b3cc09f3ad815d >> ~/tok.txt
+      - echo 9928b1870e1c9c3b4205e76a81b3cc09f3ad815d >> ~/tok.txt
+      - cat ~/tok.txt | docker login https://docker.pkg.github.com -u arturolc --password-stdin
+  build:  
+    commands:
+      - docker-compose up
+  post_build:
+    commands:
+      - echo "No test to run"
