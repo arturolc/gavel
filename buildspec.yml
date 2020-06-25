@@ -13,7 +13,6 @@ phases:
       - echo 9928b1870e1c9c3b4205e76a81b3cc09f3ad815d >> ~/tok.txt
       - echo 9928b1870e1c9c3b4205e76a81b3cc09f3ad815d >> ~/tok.txt
       - cat ~/tok.txt | docker login https://docker.pkg.github.com -u arturolc --password-stdin
-      - usermod -a -G docker $USER
   build:  
     commands:
       - docker-compose up
