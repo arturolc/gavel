@@ -15,7 +15,7 @@ phases:
       - cat ~/tok.txt | docker login https://docker.pkg.github.com -u arturolc --password-stdin
   build:  
     commands:
-      - docker-compose up
+      - sudo docker-compose up
   post_build:
     commands:
       - echo "No test to run"
