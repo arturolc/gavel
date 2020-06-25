@@ -10,7 +10,7 @@ phases:
   pre_build:
     commands:
       - echo DB_PASSWORD=2YsaTLxtzQzorB6rq2Qmpr@3mLsRGN29 >> .env
-      - echo 6b18bd1dfa56bccafce63616ec808f2efbf53aa0 >> ~/tok.txt
+      - echo c453f4e1291100fb53e9408819b9c4509f1d6961 >> ~/tok.txt
       - cat ~/tok.txt | docker login https://docker.pkg.github.com -u arturolc --password-stdin
   build:  
     commands:
