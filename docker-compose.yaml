@@ -1,7 +1,7 @@
 version: '3.4'
 
 x-gavel-base: &gavel_base
-  image: docker.pkg.github.com/hacktheu-org/gavel/gavel:latest
+  image: docker.pkg.github.com/arturolc/gavel/gavel:latest
   restart: always
   volumes:
     - ./config.yaml:/opt/gavel/config.yaml
