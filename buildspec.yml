@@ -1,4 +1,8 @@
 version: 0.2
+env:
+  secrets-manager:
+     github_key: GITHUB_TOKEN
+     db_pw: DB_PASSWORD
 phases:
   install:
     commands:
@@ -9,9 +13,8 @@ phases:
       - docker-compose --version
   pre_build:
     commands:
-      - echo DB_PASSWORD=2YsaTLxtzQzorB6rq2Qmpr@3mLsRGN29 >> .env
-      - echo f1c2a01955cd206c25faa0d8b4a8b41a6b6c0674 >> ~/tok.txt
-      - cat ~/tok.txt | docker login https://docker.pkg.github.com -u arturolc --password-stdin
+      - echo DB_PASSWORD=$db_password >> .env
+      - echo $github_key | docker login https://docker.pkg.github.com -u arturolc --password-stdin
   build:  
     commands:
       - docker-compose up
