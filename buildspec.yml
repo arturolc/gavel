@@ -13,6 +13,7 @@ phases:
       - docker-compose --version
   pre_build:
     commands:
+      - export $DB_PASSWORD=$db_password
       - echo $db_password >> .env
       - echo $github_key | docker login https://docker.pkg.github.com -u arturolc --password-stdin
   build:  
