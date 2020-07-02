@@ -13,11 +13,11 @@ phases:
       - docker-compose --version
   pre_build:
     commands:
-      - echo DB_PASSWORD=$db_password >> .env
+      - echo $db_password >> .env
       - echo $github_key | docker login https://docker.pkg.github.com -u arturolc --password-stdin
   build:  
     commands:
-      - docker-compose up
+      - docker-compose build
   post_build:
     commands:
       - echo "No test to run"
